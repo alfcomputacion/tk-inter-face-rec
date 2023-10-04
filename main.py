@@ -3,16 +3,19 @@ from tkinter import *
 from tkinter import ttk
 from PIL import ImageTk, Image
 from mainproj.FaceRec import recognize_faces
+from mainproj.utils.sendText import read_file
 
 
 def execute_btn():
     process = title_combobox.get()
     if process == 'Face Recognition':
         recognize_faces()
+    elif process == 'Reportes':
+        read_file("Lista_alumnos_4_10_2023_.json")
 
 
 window = tk.Tk()
-window.geometry("500x500")
+window.geometry("600x500")
 
 window.title("*FACE REC PROJECT*")
 window.iconbitmap("favicon.ico")
