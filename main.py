@@ -9,10 +9,30 @@ def execute_btn():
     process = title_combobox.get()
     if process == 'Face Recognition':
         recognize_faces()
+    elif process == 'Reportes':
+        #open a report function
+        print('Reports')
 
+def start_facerec():
+    recognize_faces()
+
+def start_reports():
+    print('reports')
 
 window = tk.Tk()
 window.geometry("500x500")
+#Menu starts here
+menubar = Menu(window)
+#file menu
+filemenu = Menu(menubar, tearoff=0)
+filemenu.add_command(label='REPORTES', command=start_reports)
+filemenu.add_command(label='Face Recognition', command=start_facerec)
+filemenu.add_separator()
+filemenu.add_command(label='Exit', command=window.quit)
+menubar.add_cascade(label='File', menu=filemenu)
+#ends filemenu
+
+window.config(menu=menubar)
 
 window.title("*FACE REC PROJECT*")
 window.iconbitmap("favicon.ico")
