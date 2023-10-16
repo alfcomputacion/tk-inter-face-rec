@@ -3,6 +3,7 @@ from tkinter import *
 from tkinter import ttk
 from PIL import ImageTk, Image
 from mainproj.FaceRec import recognize_faces
+from mainproj.utils.sendText import read_file
 
 
 def execute_btn():
@@ -10,8 +11,12 @@ def execute_btn():
     if process == 'Face Recognition':
         recognize_faces()
     elif process == 'Reportes':
+<<<<<<< HEAD
         #open a report function
         print('Reports')
+=======
+        read_file("Lista_alumnos_4_10_2023_.json")
+>>>>>>> 5fc4263aa4ec4807262a5fdbdaae9609a3cf35fd
 
 def start_facerec():
     recognize_faces()
@@ -20,6 +25,7 @@ def start_reports():
     print('reports')
 
 window = tk.Tk()
+<<<<<<< HEAD
 window.geometry("500x500")
 #Menu starts here
 menubar = Menu(window)
@@ -33,6 +39,9 @@ menubar.add_cascade(label='File', menu=filemenu)
 #ends filemenu
 
 window.config(menu=menubar)
+=======
+window.geometry("600x500")
+>>>>>>> 5fc4263aa4ec4807262a5fdbdaae9609a3cf35fd
 
 window.title("*FACE REC PROJECT*")
 window.iconbitmap("favicon.ico")

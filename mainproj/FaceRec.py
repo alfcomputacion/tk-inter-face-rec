@@ -1,15 +1,26 @@
 import cv2
+import os
+import json
+from datetime import datetime
 from deepface import DeepFace
+from mainproj.utils.createjson import create_json, append_json
+from mainproj.utils.sendText import SendTxt
 
 
+# cap = cv2.VideoCapture('entrada_2.mp4')
 def recognize_faces():
     cap = cv2.VideoCapture('mainproj/VIDEO/entrada.mp4')
+    today = "Lista_alumnos_" + str(datetime.today().day) + "_" + \
+        str(datetime.today().month) + "_" + \
+        str(datetime.today().year) + "_.json"
+    alumno = {"Alumno": []}
 
+    lista = []
+    create_json(today, alumno)
     while True:
 
         ret, frame = cap.read()
         if ret == False:
-
             break
 
         # El tamaño original es 3840 × 2160
@@ -29,8 +40,34 @@ def recognize_faces():
             w = dfs[ide]['source_w'][0]
             h = dfs[ide]['source_h'][0]
             identidad = dfs[ide]['identity'][0].split('/')[1].split('.')[0]
+            name = dfs[0]['identity'][0].split('\\')[-1].split('/')[0]
+            jsonpath = dfs[0]['identity'][0].split('/')[1]
+            print(jsonpath)
+            filepath = os.path.join(jsonpath + '/data.json')
+            with open(filepath, 'r') as fp:
+                information = json.load(fp)
+                if str(information['Alumno'][0]['matricula']) not in lista:
+                    # print('alumno ya entro a la escuela')
+                    # print(rostro)
+                    matricula = str(information['Alumno'][0]['matricula'])
+                    nombre = str(information['Alumno'][0]['nombre'])
+                    apellidos = str(information['Alumno'][0]['apellidos'])
+                    tel_contacto = str(
+                        information['Alumno'][0]['tel_contacto'])
 
+                    # print('matricula:' + matricula)
+                    # print('nombre:' + nombre)
+                    # print('telefono:' + tel_contacto)
+
+                    append_json(today, matricula, nombre,
+                                apellidos, tel_contacto)
+                    lista.append(str(information['Alumno'][0]['matricula']))
+            if dfs[0]['VGG-Face_cosine'][0] < 0.31:
+                print(dfs[0]['VGG-Face_cosine'][0])
+                cv2.putText(frame, name, (x, y - 10),
+                            cv2.FONT_HERSHEY_COMPLEX, 0.5, (0, 255, 0), 1)
             cv2.rectangle(frame, (x, y), (x+w, y+h), (0, 0, 255), 3)
+
             org = (50, 50)
             fontScale = 1
             color = (255, 0, 0)
@@ -46,3 +83,4 @@ def recognize_faces():
 
     cv2.destroyAllWindows()
     cap.release()
+    SendTxt(today)
