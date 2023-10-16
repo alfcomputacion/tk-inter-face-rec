@@ -23,6 +23,8 @@ def start_facerec():
 
 def start_reports():
     table_window = Toplevel()
+    table_window.title('Datos de alumnos')
+    table_window.iconbitmap("favicon.ico")
     generate_table(contact_information, table_window=table_window )
 
 window = tk.Tk()
