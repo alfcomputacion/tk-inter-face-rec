@@ -1,4 +1,5 @@
 import tkinter as tk
+import sqlite3
 from tkinter import *
 from tkinter import ttk
 from PIL import ImageTk, Image
@@ -6,40 +7,82 @@ from mainproj.FaceRec import recognize_faces
 from mainproj.utils.sendText import read_file
 from mainproj.utils.table import generate_table
 
-contact_information = [('1234', 'Jose', 'Rosas', '13235039494'),('2321', 'John', 'Doe', '13235039494')]
+# from mainproj.utils.statementsdb import selectStatement
+
+# BASE DE DATOS
+con = sqlite3.connect('alumnos.db')
+cursor = con.cursor()
+fecha_inicio = '2023-10-10'
+fecha_final = '2023-10-10'
+select_by_fecha = "SELECT fecha, entrada, mat_ID, tel FROM asistencia INNER JOIN alumno on alumno.matricula = asistencia.mat_ID WHERE fecha BETWEEN ? AND ?, fecha_inicio "
+
+con.execute("PRAGMA foreign_keys = ON")
+
+contact_information = [(1234, 'Jose', 'Rosas', '13235039494'),
+                       ('2321', 'John', 'Doe', '13235039494')]
+
+
 def execute_btn():
     process = title_combobox.get()
     if process == 'Face Recognition':
         recognize_faces()
     elif process == 'Reportes':
 
-        #open a report function
+        # open a report function
         print('Reports')
 
         read_file("Lista_alumnos_4_10_2023_.json")
 
+
 def start_facerec():
     recognize_faces()
+
+
+def selectStatement(select=select_by_fecha):
+
+    # if select != 'x':
+    #     # select = "SELECT * FROM asistencia"
+    #     select_by_fecha = "SELECT fecha, entrada, mat_ID, tel FROM asistencia INNER JOIN alumno on alumno.matricula = asistencia.mat_ID WHERE fecha BETWEEN {fecha_inicio} AND {fecha_final}"
+    #     select_by_matricula = "SELECT fecha, entrada, mat_ID, tel FROM asistencia INNER JOIN alumno on alumno.matricula = asistencia.mat_ID WHERE mat_ID = {matricula}"
+
+    cursor.execute(select)
+    results = cursor.fetchall()
+
+    print(f"Matricula Nombre Apellidos")
+    # entrada = ''
+    for i, result in enumerate(results, 1):
+
+        print(f"{result[0]} | {result[1]} | {result[2]}")
+
+    return results
+
 
 def start_reports():
     table_window = Toplevel()
     table_window.title('Datos de alumnos')
     table_window.iconbitmap("favicon.ico")
-    generate_table(contact_information, table_window=table_window )
+
+    # select = 'SELECT * FROM asistencia'
+    results = selectStatement()
+    # cursor.execute(select)
+    # results = cursor.fetchall()
+    generate_table(results, table_window=table_window)
+    # generate_table(contact_information, table_window=table_window)
+
 
 window = tk.Tk()
 
 window.geometry("500x500")
-#Menu starts here
+# Menu starts here
 menubar = Menu(window)
-#file menu
+# file menu
 filemenu = Menu(menubar, tearoff=0)
 filemenu.add_command(label='REPORTES', command=start_reports)
 filemenu.add_command(label='Face Recognition', command=start_facerec)
 filemenu.add_separator()
 filemenu.add_command(label='Exit', command=window.quit)
 menubar.add_cascade(label='File', menu=filemenu)
-#ends filemenu
+# ends filemenu
 
 window.config(menu=menubar)
 
@@ -71,3 +114,6 @@ my_label = Label(image=my_img)
 my_label.pack()
 
 window.mainloop()
+
+cursor.close()
+con.close()

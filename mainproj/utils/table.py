@@ -2,8 +2,9 @@ import tkinter as tk
 from tkinter import ttk
 from tkinter.messagebox import showinfo
 
+
 def generate_table(contact_information, table_window):
-    columns = ('matricula','nombre', 'apellidos', 'telefono' )
+    columns = ('matricula', 'nombre', 'apellidos', 'telefono')
 
     tree = ttk.Treeview(table_window, columns=columns, show='headings')
 
@@ -19,7 +20,8 @@ def generate_table(contact_information, table_window):
         for selected_item in tree.selection():
             item = tree.item(selected_item)
             record = item['values']
-            showinfo(title='Information', message=','.join(record))
+            showinfo(title='Information', message=record)
+
     tree.bind('<<TreeviewSelect>>', item_selected)
 
     tree.grid(row=0, column=0, sticky='nsew')
