@@ -14,7 +14,7 @@ con = sqlite3.connect('alumnos.db')
 cursor = con.cursor()
 fecha_inicio = '2023-10-10'
 fecha_final = '2023-10-10'
-select_by_fecha = "SELECT fecha, entrada, mat_ID, tel FROM asistencia INNER JOIN alumno on alumno.matricula = asistencia.mat_ID WHERE fecha BETWEEN ? AND ?, fecha_inicio "
+select_by_fecha = "SELECT fecha, entrada, mat_ID, tel FROM asistencia INNER JOIN alumno on alumno.matricula = asistencia.mat_ID WHERE fecha BETWEEN ? AND ?",  fecha_inicio,  fecha_final
 
 con.execute("PRAGMA foreign_keys = ON")
 
