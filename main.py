@@ -7,14 +7,18 @@ from mainproj.FaceRec import recognize_faces
 from mainproj.utils.sendText import read_file
 from mainproj.utils.table import generate_table
 
-# from mainproj.utils.statementsdb import selectStatement
+from mainproj.utils.statementsdb import selectStatement
 
 # BASE DE DATOS
 con = sqlite3.connect('alumnos.db')
 cursor = con.cursor()
-fecha_inicio = '2023-10-10'
-fecha_final = '2023-10-10'
-select_by_fecha = "SELECT fecha, entrada, mat_ID, tel FROM asistencia INNER JOIN alumno on alumno.matricula = asistencia.mat_ID WHERE fecha BETWEEN ? AND ?",  fecha_inicio,  fecha_final
+# fecha_inicio = '2023-10-10 00:00:00'
+# fecha_final = '2023-10-16 23:59:59'
+fecha_inicio = '2023-10-01'
+fecha_final = '2023-10-16'
+params = (fecha_inicio, fecha_final)
+select_by_fecha = "SELECT fecha, entrada, mat_ID, tel FROM asistencia INNER JOIN alumno on alumno.matricula = asistencia.mat_ID WHERE DATE(fecha) BETWEEN ? AND ?"
+select = "SELECT * FROM asistencia"
 
 con.execute("PRAGMA foreign_keys = ON")
 
@@ -38,32 +42,17 @@ def start_facerec():
     recognize_faces()
 
 
-def selectStatement(select=select_by_fecha):
-
-    # if select != 'x':
-    #     # select = "SELECT * FROM asistencia"
-    #     select_by_fecha = "SELECT fecha, entrada, mat_ID, tel FROM asistencia INNER JOIN alumno on alumno.matricula = asistencia.mat_ID WHERE fecha BETWEEN {fecha_inicio} AND {fecha_final}"
-    #     select_by_matricula = "SELECT fecha, entrada, mat_ID, tel FROM asistencia INNER JOIN alumno on alumno.matricula = asistencia.mat_ID WHERE mat_ID = {matricula}"
-
-    cursor.execute(select)
-    results = cursor.fetchall()
-
-    print(f"Matricula Nombre Apellidos")
-    # entrada = ''
-    for i, result in enumerate(results, 1):
-
-        print(f"{result[0]} | {result[1]} | {result[2]}")
-
-    return results
-
-
 def start_reports():
     table_window = Toplevel()
     table_window.title('Datos de alumnos')
     table_window.iconbitmap("favicon.ico")
 
     # select = 'SELECT * FROM asistencia'
-    results = selectStatement()
+    print('params:')
+    print(params)
+    print('select_by_fecha:')
+    print(select_by_fecha)
+    results = selectStatement(select_by_fecha, params)
     # cursor.execute(select)
     # results = cursor.fetchall()
     generate_table(results, table_window=table_window)
