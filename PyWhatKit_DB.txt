@@ -23,3 +23,58 @@ Time: 11:46
 Phone Number: +13235039494
 Message: Hi, Jose Rosas was in today.
 --------------------
+Date: 17/10/2023
+Time: 15:16
+Phone Number: +13235039494
+Message: Hi, Jose Rosas was in today.
+--------------------
+Date: 17/10/2023
+Time: 17:30
+Phone Number: +526562630048
+Message: Hi, Alba KArina Minjares was in today.
+--------------------
+Date: 17/10/2023
+Time: 17:30
+Phone Number: +526568529071
+Message: Hi, Jazmin De la Rosa was in today.
+--------------------
+Date: 17/10/2023
+Time: 17:30
+Phone Number: +526566696680
+Message: Hi, Luis Hernandez was in today.
+--------------------
+Date: 17/10/2023
+Time: 17:30
+Phone Number: +526565634052
+Message: Hi, Laura Pinales was in today.
+--------------------
+Date: 17/10/2023
+Time: 17:30
+Phone Number: +526562151452
+Message: Hi, Brissa Gandarilla was in today.
+--------------------
+Date: 17/10/2023
+Time: 17:35
+Phone Number: +526562630048
+Message: Hi, Alba KArina Minjares was in today.
+--------------------
+Date: 17/10/2023
+Time: 17:35
+Phone Number: +526568529071
+Message: Hi, Jazmin De la Rosa was in today.
+--------------------
+Date: 17/10/2023
+Time: 17:35
+Phone Number: +526566696680
+Message: Hi, Luis Hernandez was in today.
+--------------------
+Date: 17/10/2023
+Time: 17:36
+Phone Number: +526565634052
+Message: Hi, Laura Pinales was in today.
+--------------------
+Date: 17/10/2023
+Time: 17:36
+Phone Number: +526562151452
+Message: Hi, Brissa Gandarilla was in today.
+--------------------

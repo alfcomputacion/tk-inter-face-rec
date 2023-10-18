@@ -45,8 +45,10 @@ def start_reports():
     table_window = Toplevel()
     table_window.title('Datos de alumnos')
     table_window.iconbitmap("favicon.ico")
+
     inicio = desdeCal.get_date()
     final = hastaCal.get_date()
+
     parametros = (inicio, final)
     results = selectStatement(params=parametros)
 

@@ -18,6 +18,7 @@ def SendTxt(file):
         nombrecompleto = nombre + ' ' + apellido
         pywhatkit.sendwhatmsg_instantly(
             "+" + number, 'Hi, ' + nombrecompleto + ' was in today.', wait_time=5, close_time=5)
+
         time.sleep(5)
 
 
