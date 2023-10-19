@@ -52,18 +52,18 @@ def insertDataAsistencia(matricula, fecha):
     no_mseconds = fecha.split('.')[0]
     entrada = datetime.strptime(no_mseconds, "%Y-%m-%d %H:%M:%S")
 ##################### MODIFY#################################
-    fecha = datetime.now()
-    time1 = fecha.strftime("%H:%M:%S")
-    entrada = datetime.strptime(time1, "%H:%M:%S")
+    # fecha = datetime.now()
+    # time1 = fecha.strftime("%H:%M:%S")
+    entrada = datetime.strptime(fecha, "%H:%M:%S")
 
     # print("hola", type(entrada))
-    time_now = datetime.strptime("13:48:32", "%H:%M:%S")
+    hora_entrada = datetime.strptime("13:48:32", "%H:%M:%S")
     # print("hello", type(time_now))
 
-    if entrada > time_now:
-        salida_entrada = 'ENTRADA'
-    else:
+    if entrada > hora_entrada:
         salida_entrada = 'SALIDA'
+    else:
+        salida_entrada = 'ENTRADA'
 
 #     print(str(entrada) + '  Salida')
 # else:
