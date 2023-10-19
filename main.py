@@ -6,9 +6,10 @@ from PIL import ImageTk, Image
 from mainproj.FaceRec import recognize_faces
 from mainproj.utils.sendText import read_file
 from mainproj.utils.table import generate_table
+from mainproj.utils.alumnoform import readandinsertData
 from tkcalendar import DateEntry
 
-from mainproj.utils.statementsdb import selectStatement
+from mainproj.utils.statementsdb import selectStatement, insertDataAlumno, insertDataAsistencia
 
 # BASE DE DATOS
 con = sqlite3.connect('alumnos.db')
@@ -46,10 +47,11 @@ def start_reports():
     table_window.title('Datos de alumnos')
     table_window.iconbitmap("favicon.ico")
 
+    matricula = matricula_entry.get()
     inicio = desdeCal.get_date()
     final = hastaCal.get_date()
 
-    parametros = (inicio, final)
+    parametros = (matricula, inicio, final)
     results = selectStatement(params=parametros)
 
     generate_table(results, table_window=table_window)
@@ -68,10 +70,16 @@ def fechas():
     return desdeCal.get_date()
 
 
+# MATRICULA
+matricula_lab = Label(window, text="Matricula: ")
+matricula_lab.pack()
+
+matricula_entry = Entry(window, text="Matricula", font=40)
+matricula_entry.pack()
 # CALENDAR
 desde_label = Label(window, text="SELECCIONA FECHA DESDE: ")
-
 desde_label.pack()
+
 desdeCal = DateEntry(window, selectmode='day')
 desdeCal.pack()
 
@@ -119,5 +127,9 @@ button.grid(row=3, column=0, sticky="news", padx=20, pady=20)
 my_img = ImageTk.PhotoImage(Image.open("maya-1-2.png"))
 my_label = Label(image=my_img)
 my_label.pack()
+# insertDataAlumno(11111, "Brissa", "Gandarilla",
+#  526562151452, "Senora Brissa", "Hernandez")
+# insertDataAsistencia(11111)
+# readandinsertData('Lista_alumnos_17_10_2023_.json')
 
 window.mainloop()

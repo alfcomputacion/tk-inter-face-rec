@@ -5,37 +5,35 @@
       "nombre": "Alba KArina",
       "apellidos": "Minjares",
       "tel_contacto": "526562630048",
-      "t_nombre": "Señora Karina",
-      "t_apellidos": "Chaides",
-
-      "hora": "2023-10-17 17:32:09.464706"
+      "hora": "2023-10-18 17:21:02.782137"
     },
     {
       "matricula": "44444",
       "nombre": "Jazmin",
       "apellidos": "De la Rosa",
       "tel_contacto": "526568529071",
-      "t_nombre": "Señora Jazmin",
-      "t_apellidos": "Sigala",
-      "hora": "2023-10-17 17:32:18.674653"
+      "hora": "2023-10-18 17:21:12.054138"
     },
     {
       "matricula": "66666",
       "nombre": "Luis",
       "apellidos": "Hernandez",
       "tel_contacto": "526566696680",
-      "t_nombre": "Señor Luis",
-      "t_apellidos": "Hernandez",
-      "hora": "2023-10-17 17:32:48.957653"
+      "hora": "2023-10-18 17:21:41.921138"
     },
     {
       "matricula": "55555",
       "nombre": "Laura",
       "apellidos": "Pinales",
       "tel_contacto": "526565634052",
-      "t_nombre": "Señora Laura",
-      "t_apellidos": "Pinales",
-      "hora": "2023-10-17 17:32:53.918650"
+      "hora": "2023-10-18 17:21:46.677141"
+    },
+    {
+      "matricula": "11111",
+      "nombre": "Brissa",
+      "apellidos": "Gandarilla",
+      "tel_contacto": "526562151452",
+      "hora": "2023-10-18 17:23:53.760751"
     }
   ]
 }
