@@ -13,10 +13,10 @@ def generate_table(contact_information, table_window):
     tree.heading('fecha', text='FECHA')
     tree.heading('entrada', text='ENTRADA/SALIDA')
     tree.heading('matricula', text='MATRICULA')
-    tree.heading('nombre', text='MATRICULA')
-    tree.heading('apellidos', text='MATRICULA')
-    tree.heading('t_nombre', text='MATRICULA')
-    tree.heading('t_apellidos', text='APELLIDOS')
+    tree.heading('nombre', text='NOMBRE')
+    tree.heading('apellidos', text='APELLIDOS')
+    tree.heading('t_nombre', text='NOMBRE TUTOR')
+    tree.heading('t_apellidos', text='APELLIDOS TUTOR')
     tree.heading('telefono', text='TELEFONO')
 
     for contact in contact_information:

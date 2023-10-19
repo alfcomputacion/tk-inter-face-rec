@@ -51,6 +51,21 @@ def insertDataAsistencia(matricula, fecha):
     # f = datetime.now()
     no_mseconds = fecha.split('.')[0]
     entrada = datetime.strptime(no_mseconds, "%Y-%m-%d %H:%M:%S")
+##################### MODIFY#################################
+    # fecha = datetime.now()
+
+# time1 = fecha.strftime("%H:%M:%S")
+# entrada = datetime.strptime(time1, "%H:%M:%S")
+# print("hola", type(entrada))
+# time_now = datetime.strptime("13:48:32", "%H:%M:%S")
+# print("hello", type(time_now))
+
+# if entrada > time_now:
+#     print(str(entrada) + '  Salida')
+# else:
+#     print(str(time_now) + "  mas grande")
+#################### END MODIFY################################
+
     # END PONER ESTE CODIGO EN EL SENDTEXT
 
     params = (entrada, salida_entrada, matricula)
