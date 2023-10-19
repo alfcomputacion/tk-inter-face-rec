@@ -17,7 +17,7 @@ def recognize_faces():
     # str(datetime.today().hour) + "_" + \
     # str(datetime.today().minute) + \
     # SendTxt(today)
-    exit
+
     alumno = {"Alumno": []}
     lista = []
     create_json(today, alumno)
