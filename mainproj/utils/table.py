@@ -21,22 +21,10 @@ def generate_table(contact_information, table_window):
 
     for contact in contact_information:
 
-        # time_now = datetime.strftime(contact[0], "%H:%M:%S")
-        # print(time_now)
-        # **********************************
         fecha = contact[0].split('.')[0]
         entrada = datetime.strptime(fecha, "%Y-%m-%d %H:%M:%S")
         print("ENTRADA:")
         print(entrada)
-        # print("hola", type(entrada))
-        # time_now = datetime.strptime("13:48:32", "%H:%M:%S")
-        # print("hello", type(time_now))
-
-        # if entrada > time_now:
-        #     print(str(entrada) + '  Salida')
-        # else:
-        #     print(str(time_now) + "  mas grande")
-# **********************************
 
         tree.insert('', tk.END, value=contact)
 

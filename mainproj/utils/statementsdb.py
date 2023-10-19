@@ -2,25 +2,6 @@ import sqlite3
 from datetime import datetime
 import time
 
-
-# fecha = datetime.now()
-
-# time1 = fecha.strftime("%H:%M:%S")
-# entrada = datetime.strptime(time1, "%H:%M:%S")
-# print("hola", type(entrada))
-# time_now = datetime.strptime("13:48:32", "%H:%M:%S")
-# print("hello", type(time_now))
-
-# if entrada > time_now:
-#     print(str(entrada) + '  Salida')
-# else:
-#     print(str(time_now) + "  mas grande")
-
-# fecha = input('Cual es la fecha?')
-# print(fecha)
-# print('esta es el tiempo de la fecha::::')
-# print(fecha.time())
-# 12569
 con = sqlite3.connect('alumnos.db')
 cursor = con.cursor()
 con.execute("PRAGMA foreign_keys = ON")
@@ -49,26 +30,22 @@ salida_entrada = 'SALIDA'
 def insertDataAsistencia(matricula, fecha):
     # PONER ESTE CODIGO EN EL SENDTEXT
     # f = datetime.now()
+    print(fecha)
     no_mseconds = fecha.split('.')[0]
+    print(no_mseconds)
     entrada = datetime.strptime(no_mseconds, "%Y-%m-%d %H:%M:%S")
-##################### MODIFY#################################
-    # fecha = datetime.now()
-    # time1 = fecha.strftime("%H:%M:%S")
-    entrada = datetime.strptime(fecha, "%H:%M:%S")
 
-    # print("hola", type(entrada))
+    checa_hora = entrada.time()
     hora_entrada = datetime.strptime("13:48:32", "%H:%M:%S")
-    # print("hello", type(time_now))
+    hora_entrada = hora_entrada.time()
 
-    if entrada > hora_entrada:
+    if checa_hora > hora_entrada:
+        print(checa_hora, ' es mayor que ', hora_entrada)
         salida_entrada = 'SALIDA'
     else:
-        salida_entrada = 'ENTRADA'
+        print(checa_hora, ' es MENOR que ', hora_entrada)
 
-#     print(str(entrada) + '  Salida')
-# else:
-#     print(str(time_now) + "  mas grande")
-#################### END MODIFY################################
+        salida_entrada = 'ENTRADA'
 
     # END PONER ESTE CODIGO EN EL SENDTEXT
 
@@ -78,10 +55,6 @@ def insertDataAsistencia(matricula, fecha):
     cursor.execute(insert, params)
     con.commit()
     print('Datos guardados exitosamente.')
-    # WHERE fecha BETWEEN '2023-10-10' AND '2023-10-16'
-    # fecha_inicio = '2023-10-10'
-    # fecha_final = '2023-10-16'
-    # matricula = 1569
 
 
 def selectStatement(select='SELECT * FROM asistencia', params=None):

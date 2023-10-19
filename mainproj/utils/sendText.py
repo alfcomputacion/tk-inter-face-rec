@@ -18,8 +18,8 @@ def SendTxt(file):
         nombre = alumnos_list['Alumno'][i]['nombre']
         apellido = alumnos_list['Alumno'][i]['apellidos']
         nombrecompleto = nombre + ' ' + apellido
-        pywhatkit.sendwhatmsg_instantly(
-            "+" + number, 'Hi, ' + nombrecompleto + ' was in today.', wait_time=5, close_time=5)
+        # pywhatkit.sendwhatmsg_instantly(
+        #     "+" + number, 'Hi, ' + nombrecompleto + ' was in today.', wait_time=5, close_time=5)
         insertDataAsistencia(matricula, fecha)
         time.sleep(5)
 

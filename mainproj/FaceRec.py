@@ -9,12 +9,16 @@ from mainproj.utils.sendText import SendTxt
 
 # cap = cv2.VideoCapture('entrada_2.mp4')
 def recognize_faces():
-    cap = cv2.VideoCapture('mainproj/VIDEO/salida.mp4')
+    cap = cv2.VideoCapture('mainproj/VIDEO/salida11.mp4')
     today = "Lista_alumnos_" + str(datetime.today().day) + "_" + \
         str(datetime.today().month) + "_" + \
-        str(datetime.today().year) + "_.json"
+        str(datetime.today().year) + "_" + \
+        "_.json"
+    # str(datetime.today().hour) + "_" + \
+    # str(datetime.today().minute) + \
+    # SendTxt(today)
+    exit
     alumno = {"Alumno": []}
-
     lista = []
     create_json(today, alumno)
     while True:
@@ -42,7 +46,7 @@ def recognize_faces():
                 h = dfs[ide]['source_h'][0]
                 identidad = dfs[ide]['identity'][0].split('/')[1].split('.')[0]
                 name = dfs[0]['identity'][0].split('\\')[-1].split('/')[0]
-                jsonpath = dfs[0]['identity'][0].split('/')[1]
+                # jsonpath = dfs[0]['identity'][0].split('/')[1]
                 print('IDENTIDAD')
                 print(dfs[0]['identity'][0].split('\\')[0])
                 filepath = os.path.join('pics/' + name + '/data.json')
@@ -56,10 +60,6 @@ def recognize_faces():
                         apellidos = str(information['Alumno'][0]['apellidos'])
                         tel_contacto = str(
                             information['Alumno'][0]['tel_contacto'])
-
-                        # print('matricula:' + matricula)
-                        # print('nombre:' + nombre)
-                        # print('telefono:' + tel_contacto)
 
                         append_json(today, matricula, nombre,
                                     apellidos, tel_contacto)

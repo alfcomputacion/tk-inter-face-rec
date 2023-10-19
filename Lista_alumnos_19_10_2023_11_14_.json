@@ -1,0 +1,37 @@
+{"Alumno": [
+    {
+        "matricula": "33333",
+        "nombre": "Alba KArina",
+        "apellidos": "Minjares",
+        "tel_contacto": "526562630048",
+        "hora": "2023-10-18 10:21:02.782137"
+      },
+      {
+        "matricula": "44444",
+        "nombre": "Jazmin",
+        "apellidos": "De la Rosa",
+        "tel_contacto": "526568529071",
+        "hora": "2023-10-18 10:21:12.054138"
+      },
+      {
+        "matricula": "66666",
+        "nombre": "Luis",
+        "apellidos": "Hernandez",
+        "tel_contacto": "526566696680",
+        "hora": "2023-10-18 10:21:41.921138"
+      },
+      {
+        "matricula": "55555",
+        "nombre": "Laura",
+        "apellidos": "Pinales",
+        "tel_contacto": "526565634052",
+        "hora": "2023-10-18 10:21:46.677141"
+      },
+      {
+        "matricula": "11111",
+        "nombre": "Brissa",
+        "apellidos": "Gandarilla",
+        "tel_contacto": "526562151452",
+        "hora": "2023-10-18 10:23:53.760751"
+      }
+]}

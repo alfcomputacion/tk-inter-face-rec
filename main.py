@@ -26,18 +26,6 @@ contact_information = [(1234, 'Jose', 'Rosas', '13235039494'),
                        ('2321', 'John', 'Doe', '13235039494')]
 
 
-# def execute_btn():
-#     process = title_combobox.get()
-#     if process == 'Face Recognition':
-#         recognize_faces()
-#     elif process == 'Reportes':
-
-#         # open a report function
-#         # print('Reports')
-
-#         read_file("Lista_alumnos_4_10_2023_.json")
-
-
 def start_facerec():
     recognize_faces()
 
@@ -109,17 +97,6 @@ window.iconbitmap("favicon.ico")
 
 frame = tk.Frame(window)
 frame.pack()
-
-# user info
-# user_info_frame = tk.LabelFrame(frame, text="Selecciona una opcion")
-# user_info_frame.grid(row=0, column=0)
-
-
-# title_label = tk.Label(user_info_frame, text="Title")
-# title_combobox = ttk.Combobox(user_info_frame, values=[
-#                               "Reportes", "Face Recognition"])
-# title_label.grid(row=0, column=2)
-# title_combobox.grid(row=0, column=2)
 
 button = tk.Button(frame, text="Generar Reporte", command=start_reports)
 button.grid(row=3, column=0, sticky="news", padx=20, pady=20)
