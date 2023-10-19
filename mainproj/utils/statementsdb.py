@@ -43,7 +43,7 @@ def insertDataAlumno(matricula, nombre, apellidos, tel, t_nombre, t_apellidos):
 
 
 # WORKING INSERT entrada tiene que ser un parametro
-salida_entrada = 'salida'
+salida_entrada = 'SALIDA'
 
 
 def insertDataAsistencia(matricula, fecha):
@@ -52,15 +52,19 @@ def insertDataAsistencia(matricula, fecha):
     no_mseconds = fecha.split('.')[0]
     entrada = datetime.strptime(no_mseconds, "%Y-%m-%d %H:%M:%S")
 ##################### MODIFY#################################
-    # fecha = datetime.now()
+    fecha = datetime.now()
+    time1 = fecha.strftime("%H:%M:%S")
+    entrada = datetime.strptime(time1, "%H:%M:%S")
 
-# time1 = fecha.strftime("%H:%M:%S")
-# entrada = datetime.strptime(time1, "%H:%M:%S")
-# print("hola", type(entrada))
-# time_now = datetime.strptime("13:48:32", "%H:%M:%S")
-# print("hello", type(time_now))
+    # print("hola", type(entrada))
+    time_now = datetime.strptime("13:48:32", "%H:%M:%S")
+    # print("hello", type(time_now))
 
-# if entrada > time_now:
+    if entrada > time_now:
+        salida_entrada = 'ENTRADA'
+    else:
+        salida_entrada = 'SALIDA'
+
 #     print(str(entrada) + '  Salida')
 # else:
 #     print(str(time_now) + "  mas grande")
