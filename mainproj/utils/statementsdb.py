@@ -36,16 +36,27 @@ def insertDataAsistencia(matricula, fecha):
     entrada = datetime.strptime(no_mseconds, "%Y-%m-%d %H:%M:%S")
 
     checa_hora = entrada.time()
-    hora_entrada = datetime.strptime("13:48:32", "%H:%M:%S")
+
+    hora_entrada = datetime.strptime("09:10:00", "%H:%M:%S")
     hora_entrada = hora_entrada.time()
 
-    if checa_hora > hora_entrada:
-        print(checa_hora, ' es mayor que ', hora_entrada)
-        salida_entrada = 'SALIDA'
-    else:
-        print(checa_hora, ' es MENOR que ', hora_entrada)
+    hora_salida = datetime.strptime("13:20:00", "%H:%M:%S")
+    hora_salida = hora_salida.time()
 
+    if checa_hora <= hora_entrada:
         salida_entrada = 'ENTRADA'
+    elif checa_hora > hora_entrada and checa_hora < hora_salida:
+        salida_entrada = 'RETARDO'
+    elif checa_hora > hora_salida:
+        salida_entrada = 'SALIDA'
+
+    # if checa_hora > hora_entrada and checa_hora < hora_salida:
+       # print(checa_hora, ' es mayor que  ', hora_entrada)
+       # salida_entrada = 'SALIDA'
+   # else:
+      #  print(checa_hora, ' es MENOR que ', hora_entrada)
+
+       # salida_entrada = 'ENTRADA'
 
     # END PONER ESTE CODIGO EN EL SENDTEXT
 
