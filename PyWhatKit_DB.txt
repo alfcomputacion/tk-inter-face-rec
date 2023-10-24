@@ -118,3 +118,68 @@ Time: 17:25
 Phone Number: +526562151452
 Message: Hi, Brissa Gandarilla was in today.
 --------------------
+Date: 23/10/2023
+Time: 11:26
+Phone Number: +526562630048
+Message: Buen día, el estudiante: Alba KArina Minjares LLEGO TARDE al CECyT 22
+--------------------
+Date: 23/10/2023
+Time: 11:44
+Phone Number: +526562630048
+Message: Buen día, el estudiante: Alba KArina Minjares LLEGO TARDE al CECyT 22
+--------------------
+Date: 23/10/2023
+Time: 11:44
+Phone Number: +526568529071
+Message: Buen día, el estudiante: Jazmin De la Rosa LLEGO TARDE al CECyT 22
+--------------------
+Date: 23/10/2023
+Time: 11:44
+Phone Number: +526566696680
+Message: Buen día, el estudiante: Luis Hernandez LLEGO TARDE al CECyT 22
+--------------------
+Date: 23/10/2023
+Time: 11:45
+Phone Number: +526565634052
+Message: Buen día, el estudiante: Laura Pinales LLEGO TARDE al CECyT 22
+--------------------
+Date: 23/10/2023
+Time: 11:45
+Phone Number: +526562151452
+Message: Buen día, el estudiante: Brissa Gandarilla LLEGO TARDE al CECyT 22
+--------------------
+Date: 23/10/2023
+Time: 11:50
+Phone Number: +526562630048
+Message: Buen día, el estudiante: Alba KArina Minjares LLEGO TARDE al CECyT 22
+--------------------
+Date: 23/10/2023
+Time: 12:1
+Phone Number: +526562630048
+Message: Buen día, el estudiante: Alba KArina Minjares LLEGO TARDE al CECyT 22
+--------------------
+Date: 23/10/2023
+Time: 12:1
+Phone Number: +526568529071
+Message: Buen día, el estudiante: Jazmin De la Rosa LLEGO TARDE al CECyT 22
+--------------------
+Date: 23/10/2023
+Time: 12:1
+Phone Number: +526566696680
+Message: Buen día, el estudiante: Luis Hernandez LLEGO TARDE al CECyT 22
+--------------------
+Date: 23/10/2023
+Time: 12:1
+Phone Number: +526565634052
+Message: Buen día, el estudiante: Laura Pinales LLEGO TARDE al CECyT 22
+--------------------
+Date: 23/10/2023
+Time: 12:1
+Phone Number: +526562151452
+Message: Buen día, el estudiante: Brissa Gandarilla LLEGO TARDE al CECyT 22
+--------------------
+Date: 23/10/2023
+Time: 12:16
+Phone Number: +526562630048
+Message: Buen día, el estudiante: Alba KArina Minjares LLEGO TARDE al CECyT 22
+--------------------

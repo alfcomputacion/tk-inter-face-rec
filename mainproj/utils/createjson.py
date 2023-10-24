@@ -92,6 +92,6 @@ def delobject(name="jose"):
 # print(datetime.date.today())
 # print(str(datetime.date.today().year))
 
-alumno = {"Alumno": []}
-print(type(alumno))
-print(type(alumno['Alumno']))
+# alumno = {"Alumno": []}
+# print(type(alumno))
+# print(type(alumno['Alumno']))
