@@ -9,9 +9,11 @@ from mainproj.utils.table import generate_table
 from mainproj.utils.alumnoform import readandinsertData
 from tkcalendar import DateEntry
 
+import asyncio
+
 from mainproj.utils.statementsdb import selectStatement, insertDataAlumno, insertDataAsistencia
 
-# BASE DE DATOS
+# conexion BASE DE DATOS
 con = sqlite3.connect('alumnos.db')
 cursor = con.cursor()
 
@@ -77,6 +79,7 @@ hasta_label.pack()
 hastaCal = DateEntry(window, selectmode='day')
 hastaCal.pack()
 
+# MENU
 menubar = Menu(window)
 # file menu
 filemenu = Menu(menubar, tearoff=0)
