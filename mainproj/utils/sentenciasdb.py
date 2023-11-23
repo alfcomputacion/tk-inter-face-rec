@@ -27,7 +27,7 @@ def insertDataAlumno(matricula, nombre, apellidos, tel, t_nombre, t_apellidos):
 salida_entrada = 'SALIDA'
 
 
-def insertDataAsistencia(matricula, fecha):
+def insertDatosAsistencia(matricula, fecha):
     # PONER ESTE CODIGO EN EL SENDTEXT
     # f = datetime.now()
     print(fecha)
@@ -68,7 +68,7 @@ def insertDataAsistencia(matricula, fecha):
     print('Datos guardados exitosamente.')
 
 
-def selectStatement(select='SELECT * FROM asistencia', params=None):
+def selectSentencia(select='SELECT * FROM asistencia', params=None):
     selector = len(params)
     pass
 

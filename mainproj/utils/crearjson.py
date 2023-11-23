@@ -4,42 +4,7 @@ import os
 
 print(os.path.abspath(os.getcwd()))
 path = os.path.abspath(os.getcwdb())
-# JSON data:
-# x = '''{
-#     "Alumno":
-# }'''
 
-# # python object to be appended
-# # y = {"pin": 110096}
-# y = {
-#     "matricula": 131321,
-#     "nombre": "Jose",
-#     "apellidos": "Rosas Sanchez",
-#     "tel_contacto": 1512328123246
-# }
-
-# # parsing JSON string:
-# z = json.loads(x)
-
-# # appending the data
-# z.update(y)
-
-# # the result is a JSON string:
-# print(json.dumps(z))
-
-
-# """
-# {
-#     "Alumno": [
-#         {
-#             "matricula": 153168,
-#             "nombre": "Arturo",
-#             "apellidos": "Padilla Rodriguez",
-#             "tel_contacto": 1526562810246
-#         }
-#     ]
-# }
-# """
 alumno = {
     "Alumno": [
         {
@@ -52,12 +17,12 @@ alumno = {
 }
 
 
-def create_json(file, data):
+def crear_json(file, data):
     with open(file, 'w') as f:
         json.dump(data, f)
 
 
-def append_json(filepath, matricula, nombre, apellidos, tel):
+def adjuntar_json(filepath, matricula, nombre, apellidos, tel):
     now = str(datetime.datetime.now())
     with open(filepath, 'r') as fp:
         information = json.load(fp)
@@ -88,7 +53,7 @@ def delobject(name="jose"):
 
 # delobject('Jose')
 # append_statistics('asistencia.json', 100, 90, 15)
-# create_json("lista223.json", alumno)
+# crear_json("lista223.json", alumno)
 # print(datetime.date.today())
 # print(str(datetime.date.today().year))
 

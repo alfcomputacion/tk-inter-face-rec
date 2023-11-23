@@ -2,11 +2,11 @@ import json
 import pywhatkit
 import time
 from datetime import datetime
-from mainproj.utils.statementsdb import insertDataAsistencia
+from mainproj.utils.sentenciasdb import insertDatosAsistencia
 alumnos_list = []
 
 
-def SendTxt(file):
+def mandarTxt(file):
     with open(file, 'r') as lista:
         alumnos_list = json.load(lista)
         # print(alumnos_list)
@@ -40,7 +40,7 @@ def SendTxt(file):
         nombrecompleto = nombre + ' ' + apellido
         pywhatkit.sendwhatmsg_instantly(
             "+" + number, 'Buen día, el estudiante: ' + nombrecompleto + ' ' + salida_entrada + ' al CECyT 22 ', wait_time=5, close_time=5)
-        insertDataAsistencia(matricula, fecha)
+        insertDatosAsistencia(matricula, fecha)
         time.sleep(5)
 
 
